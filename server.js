@@ -34,6 +34,15 @@ app.get('/', function homepage(req, res) {
 /*
  * JSON API Endpoints
  */
+//get the profile
+app.get('/api/profile',function(req,res) {
+  //send the profile as JSON
+  db.Profile.find()
+  .exec(function(err, profiles){
+    if(err) {return console.log("Err: ", err);}
+    res.json(profiles);
+  });
+};
 
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
