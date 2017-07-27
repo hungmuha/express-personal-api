@@ -87,12 +87,13 @@ app.get('/api', function api_index(req, res) {
   res.json({
     woops_i_has_forgot_to_document_all_my_endpoints: true, // CHANGE ME ;)
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentation_url: "https://github.com/example-username/express_self_api/README.md", // CHANGE ME
-    base_url: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    documentation_url: "https://github.com/hungmuha/express-personal-api", // CHANGE ME
+    base_url: "https://intense-harbor-25919.herokuapp.com/", 
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me and cool quote"}, // CHANGE ME
-      {method: "POST", path: "/api/businesses", description: "My awesome business that make me Billions of dollars"} // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Data about me and cool quote"}, 
+      {method: "GET", path: "/api/business/:dba", description: "Data about a specific business by input 'dba'"},  
+      {method: "POST", path: "/api/businesses", description: "My awesome business that make me Billions of dollars"} 
     ]
   });
 });
