@@ -49,7 +49,7 @@ app.get('/api/profile',function(req,res) {
 app.post('/api/businesses',function(req,res){
   //create new business in db
   var newBusiness = new db.Business({
-    name: req.body.name,
+    dba: req.body.dba,
     industry: req.body.industry,
     employees: req.body.employees,
     earning: req.body.earning
@@ -61,6 +61,14 @@ app.post('/api/businesses',function(req,res){
     };
     console.log("save");
     res.json(business);
+  });
+});
+
+//get the business result based on the name
+app.get('/api/businesses/:dba',function(req,res){
+  db.Business.findOne({dba: req.params.dba},function(err,data){
+    if(err){return console.log('error requesting name: ',err);}
+    res.json(data);
   });
 });
 

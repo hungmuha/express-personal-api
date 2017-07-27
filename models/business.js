@@ -2,7 +2,7 @@ var mongoose= require('mongoose'),
 Schema=mongoose.Schema;
 
 var businessSchema= new Schema({
-	name: String,
+	dba: String,
 	industry: String,
 	employees: String,
 	earning: String
