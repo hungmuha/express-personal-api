@@ -12,7 +12,7 @@ app.use(bodyParser.json());
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -34,6 +34,7 @@ app.get('/', function homepage(req, res) {
 /*
  * JSON API Endpoints
  */
+
 //get the profile
 app.get('/api/profile',function(req,res) {
   //send the profile as JSON
@@ -42,7 +43,17 @@ app.get('/api/profile',function(req,res) {
     if(err) {return console.log("Err: ", err);}
     res.json(profiles);
   });
-};
+});
+
+//get the business
+app.get('/api/businesses',function(req,res){
+  //send the business as JSon
+  db.Business.find()
+  .exec(function(err, businesses){
+    if(err) {return console.log("Err: ", err);}
+    res.json(businesses);
+  });
+});
 
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
@@ -53,10 +64,10 @@ app.get('/api', function api_index(req, res) {
     base_url: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Data about me and cool quote"}, // CHANGE ME
+      {method: "POST", path: "/api/businesses", description: "My awesome business that make me Billions of dollars"} // CHANGE ME
     ]
-  })
+  });
 });
 
 /**********
