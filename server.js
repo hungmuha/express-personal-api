@@ -72,6 +72,16 @@ app.get('/api/businesses/:dba',function(req,res){
   });
 });
 
+//creating a search endpoint
+app.get('/api/businesses/dba?'),function(req,res){
+  console.log(req);
+  db.Business.find(req.query,function(err,data){
+    if(err){return console.log('error query search: ',err);}
+    res.json(data);
+  });
+}
+
+//the instructional to all other end point
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({

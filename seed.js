@@ -51,7 +51,7 @@ var businessList = [
 	{
 		dba: "Trans-Pacific",
 		industry: "Currency trading",
-		employees: "5",
+		employees: "10",
 		earning: "$100,000,000/year", 
 	}
 ];
