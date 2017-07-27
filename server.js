@@ -74,9 +74,9 @@ app.get('/api/businesses/:dba',function(req,res){
 
 //creating a search endpoint
 app.get('/api/businesses/search'),function(req,res){
-  var query= req.query.dba;
+  var query= req.query.employees;
   console.log(query);
-  db.Business.findOne({query},function(err,data){
+  db.Business.find({query},function(err,data){
     if(err){return console.log('error query search: ',err);}
     res.json(data);
   });
