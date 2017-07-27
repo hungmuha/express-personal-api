@@ -45,13 +45,22 @@ app.get('/api/profile',function(req,res) {
   });
 });
 
-//get the business
-app.get('/api/businesses',function(req,res){
-  //send the business as JSon
-  db.Business.find()
-  .exec(function(err, businesses){
-    if(err) {return console.log("Err: ", err);}
-    res.json(businesses);
+//post the business
+app.post('/api/businesses',function(req,res){
+  //create new business in db
+  var newBusiness = new db.Business({
+    name: req.body.name,
+    industry: req.body.industry,
+    employees: req.body.employees,
+    earning: req.body.earning
+  });
+  //save the new created business
+  newBusiness.save(function(err,business){
+    if(err){
+      return console.log("save error: ",err);
+    };
+    console.log("save");
+    res.json(business);
   });
 });
 
