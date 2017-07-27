@@ -73,9 +73,10 @@ app.get('/api/businesses/:dba',function(req,res){
 });
 
 //creating a search endpoint
-app.get('/api/businesses/dba?'),function(req,res){
-  console.log(req);
-  db.Business.find(req.query,function(err,data){
+app.get('/api/businesses/search'),function(req,res){
+  var query= req.query.dba;
+  console.log(query);
+  db.Business.findOne({query},function(err,data){
     if(err){return console.log('error query search: ',err);}
     res.json(data);
   });
@@ -92,7 +93,8 @@ app.get('/api', function api_index(req, res) {
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me and cool quote"}, 
-      {method: "GET", path: "/api/business/:dba", description: "Data about a specific business by input 'dba'"},  
+      {method: "GET", path: "/api/business/:dba", description: "Data about a specific business by input 'dba'"},
+      {method: "GET", path: "/api/business/search", description: "Data about a specific business by input search query on how many emloyee= "},  
       {method: "POST", path: "/api/businesses", description: "My awesome business that make me Billions of dollars"} 
     ]
   });
