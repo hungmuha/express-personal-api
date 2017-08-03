@@ -45,6 +45,16 @@ app.get('/api/profile',function(req,res) {
   });
 });
 
+//get the businesses
+app.get('/api/businesses',function(req,res) {
+  //send the businesses as JSON
+  db.Business.find()
+  .exec(function(err, businesses){
+    if(err) {return console.log("Err: ", err);}
+    res.json(businesses);
+  });
+});
+
 //post the business
 app.post('/api/businesses',function(req,res){
   //create new business in db
