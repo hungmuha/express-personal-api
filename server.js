@@ -103,6 +103,7 @@ app.get('/api', function api_index(req, res) {
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me and cool quote"}, 
+      {method: "GET", path: "/api/businesses", description: "Data about all the businesses"},
       {method: "GET", path: "/api/business/:dba", description: "Data about a specific business by input 'dba'"},
       {method: "GET", path: "/api/business/search", description: "Data about a specific business by input search query on how many emloyee= "},  
       {method: "POST", path: "/api/businesses", description: "My awesome business that make me Billions of dollars"} 
