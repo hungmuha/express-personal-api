@@ -1,27 +1,29 @@
 {
-  "name": "express_self_api",
+  "name": "express-personal-api",
   "version": "1.0.0",
-  "description": "Build an API about yourself",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SF-WDI-LABS/express_self_api.git"
-  },
-  "author": "WDI 25",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SF-WDI-LABS/express_self_api/issues"
-  },
-  "homepage": "https://github.com/SF-WDI-LABS/express_self_api",
+  "description": "message: \"Welcome to my personal api! Here's what you need to know!\",     documentation_url: \"https://github.com/hungmuha/express-personal-api\",      base_url: \"https://intense-harbor-25919.herokuapp.com/\",      endpoints: [       {method: \"GET\", path: \"/api\", description: \"Describes all available endpoints\"},       {method: \"GET\", path: \"/api/profile\", description: \"Data about me and cool quote\"},        {method: \"GET\", path: \"/api/business/:dba\", description: \"Data about a specific business by input 'dba'\"},       {method: \"GET\", path: \"/api/business/search\", description: \"Data about a specific business by input search query on how many emloyee= \"},         {method: \"POST\", path: \"/api/businesses\", description: \"My awesome business that make me Billions of dollars\"}",
+  "main": "seed.js",
   "dependencies": {
     "mongoose": "^4.11.4",
+    "body-parser": "^1.17.2",
     "express": "^4.15.3"
   },
   "devDependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hungmuha/express-personal-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hungmuha/express-personal-api/issues"
+  },
+  "homepage": "https://github.com/hungmuha/express-personal-api#readme"
 }
